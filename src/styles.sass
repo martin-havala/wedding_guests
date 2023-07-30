@@ -5,11 +5,28 @@
 body
     font-family: var(--font-family)
 
-@media print
-    .no-print
-        display: none
+@page
+    size: 21cm 29.7cm
+    margin: 0
 
+.no-print
+    margin: auto
+    text-align: center
+    display: flex
+    flex-direction: column
+    width: 100%
+    max-width: 40em
+    justify-content: center
+    align-items: center
 hr
     border-bottom: none
     margin: 2em
     opacity: 0.2
+
+@media print
+    html, body
+        margin: 0
+    .no-print, hr
+        display: none
+
+

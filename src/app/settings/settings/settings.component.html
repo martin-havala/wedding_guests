@@ -1,0 +1,54 @@
+<div class="no-print">
+  <h1>Print Settings</h1>
+  <div class="inputs">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">Badge size (mm)</span>
+      <p-inputNumber
+        [(ngModel)]="sizeMm"
+        (ngModelChange)="makeChange('sizeMm', $event)"
+        mode="decimal"
+        [minFractionDigits]="1"
+        [min]="2.5"
+        [max]="210"
+      />
+    </div>
+
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">Badge bleed (mm)</span>
+      <p-inputNumber
+        [(ngModel)]="marginMm"
+        (ngModelChange)="makeChange('marginMm', $event)"
+        mode="decimal"
+        [minFractionDigits]="1"
+        [min]="0"
+      />
+    </div>
+
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">Spacing Size (mm)</span>
+      <p-inputNumber
+        [(ngModel)]="paddingMm"
+        (ngModelChange)="makeChange('paddingMm', $event)"
+        mode="decimal"
+        [minFractionDigits]="1"
+        [min]="0"
+      />
+    </div>
+
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">Font Size (mm)</span>
+      <p-inputNumber
+        placeholder="fontSizeMm"
+        [(ngModel)]="fontSizeMm"
+        (ngModelChange)="makeChange('fontSizeMm', $event)"
+        mode="decimal"
+        [minFractionDigits]="1"
+        [min]="7"
+        [max]="100"
+      />
+    </div>
+
+    <app-font-picker />
+  </div>
+  <app-categories />
+</div>

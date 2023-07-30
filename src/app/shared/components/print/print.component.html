@@ -4,7 +4,7 @@
       width: width + 'mm',
       height: width + 'mm'
     }"
-    *ngFor="let person of ds.data | async"
+    *ngFor="let person of ds.data | async | slice:0:-1"
     [person]="person"
   />
 </div>
@@ -15,7 +15,7 @@
       width: width + 'mm',
       height: width + 'mm'
     }"
-    *ngFor="let person of ds.data | async"
+    *ngFor="let person of ds.data | async | slice:0:-1"
     [person]="person"
     [outline]="true"
   />

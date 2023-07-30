@@ -11,6 +11,5 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class DataPreviewComponent {
   data = this.ds.data;
-
   constructor(public ds: DataService) {}
 }

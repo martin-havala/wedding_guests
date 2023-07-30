@@ -8,17 +8,48 @@
   </g>
   <text x="20" [attr.y]="margin + innerWidth * 0.68">known_from1</text>
   <line
-    x1="padding"
+    [attr.x1]="0"
     [attr.x2]="explainWidth + margin + innerWidth * 0.35"
     [attr.y1]="margin + innerWidth * 0.7"
     [attr.y2]="margin + innerWidth * 0.7"
     stroke="black"
   />
 
-  <text x="20" [attr.y]="margin + innerWidth * 0.84">known_from2</text>
+  <text x="20" [attr.y]="margin + innerWidth * 0.84">known_years1 ⇕</text>
   <line
-    x1="0"
-    [attr.x2]="explainWidth + margin + innerWidth * 0.55"
+    [attr.x1]="0"
+    [attr.x2]="explainWidth + margin + innerWidth * 0.4"
+    [attr.y1]="margin + innerWidth * 0.86"
+    [attr.y2]="margin + innerWidth * 0.86"
+    stroke="black"
+  />
+
+  <text
+    [attr.x]="explainWidth * 2 + width - 20"
+    [attr.y]="margin + innerWidth * 0.68"
+    text-anchor="end"
+  >
+    known_from2
+  </text>
+
+  <line
+    [attr.x1]="width + explainWidth * 2"
+    [attr.x2]="width_2 + explainWidth + innerWidth * 0.15"
+    [attr.y1]="margin + innerWidth * 0.7"
+    [attr.y2]="margin + innerWidth * 0.7"
+    stroke="black"
+  />
+
+  <text
+    [attr.x]="explainWidth * 2 + width - 20"
+    [attr.y]="margin + innerWidth * 0.84"
+    text-anchor="end"
+  >
+    ⇕ known_years2
+  </text>
+  <line
+    [attr.x1]="width + explainWidth * 2"
+    [attr.x2]="width_2 + explainWidth + innerWidth * 0.1"
     [attr.y1]="margin + innerWidth * 0.86"
     [attr.y2]="margin + innerWidth * 0.86"
     stroke="black"
@@ -49,10 +80,12 @@
 <ng-template #innerContent>
   <svg:g [ngStyle]="{ 'font-family': ds.fontFamily | async }">
     <circle
+      class="no-print"
       [attr.cx]="width_2"
       [attr.cy]="width_2"
       [attr.r]="innerWidth / 2"
       stroke="red"
+      opacity="0.4"
       fill="none"
     />
 
@@ -99,7 +132,7 @@
 
     <text
       [attr.font-size]="fontSizeMm + 'mm'"
-      [attr.y]="margin + innerWidth * 0.28"
+      [attr.y]="padding + margin + innerWidth * 0.22"
       [attr.x]="width_2"
       text-anchor="middle"
     >
@@ -107,7 +140,7 @@
     </text>
     <text
       [attr.font-size]="fontSizeMm + 'mm'"
-      [attr.y]="margin + innerWidth * 0.28 + fontSizeMm * 5"
+      [attr.y]="padding + margin + innerWidth * 0.22 + fontSizeMm * 5"
       [attr.x]="width_2"
       text-anchor="middle"
     >
@@ -115,7 +148,7 @@
     </text>
     <text
       [attr.font-size]="fontSizeMm * 0.8 + 'mm'"
-      [attr.y]="margin + innerWidth * 0.28 + fontSizeMm * 9"
+      [attr.y]="padding + margin + innerWidth * 0.22 + fontSizeMm * 10"
       [attr.x]="width_2"
       text-anchor="middle"
       opacity=".7"

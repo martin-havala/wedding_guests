@@ -1,64 +1,19 @@
 <div class="no-print">
-  <app-file-drop></app-file-drop>
-
-  <div class="legend">
-    <app-badge
-      [explain]="true"
-      style="width: 300px; display: block; margin: 1em"
-    ></app-badge>
-    <app-categories />
-
-    <div class="inputs">
-      <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">Badge size (mm)</span>
-        <p-inputNumber
-          [(ngModel)]="sizeMm"
-          (ngModelChange)="makeChange('sizeMm', $event)"
-          mode="decimal"
-          [minFractionDigits]="1"
-          [min]="2.5"
-          [max]="210"
-        />
-      </div>
-
-      <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">Badge bleed (mm)</span>
-        <p-inputNumber
-          [(ngModel)]="marginMm"
-          (ngModelChange)="makeChange('marginMm', $event)"
-          mode="decimal"
-          [minFractionDigits]="1"
-          [min]="0"
-        />
-      </div>
-
-      <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">Spacing Size (mm)</span>
-        <p-inputNumber
-          [(ngModel)]="paddingMm"
-          (ngModelChange)="makeChange('paddingMm', $event)"
-          mode="decimal"
-          [minFractionDigits]="1"
-          [min]="0"
-        />
-      </div>
-
-      <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">Font Size (mm)</span>
-        <p-inputNumber
-          placeholder="fontSizeMm"
-          [(ngModel)]="fontSizeMm"
-          (ngModelChange)="makeChange('fontSizeMm', $event)"
-          mode="decimal"
-          [minFractionDigits]="1"
-          [min]="7"
-          [max]="100"
-        />
-      </div>
-
-      <app-font-picker />
-    </div>
+  <h1>Wedding badges</h1>
+  <p>
+    .Based on amazing wedding preparations by
+    <a
+      href="https://medium.com/nightingale/https-medium-com-data-visualization-society-wedding-data-viz-36e7b9f4787f"
+      target="_blank"
+    >
+      Amy Cesal and Zander Furnas</a
+    >, here is small app to enhance your wedding day - data vis badge generator.
+  </p>
+  <p>Please provide a csv file with collumns according to a picture.</p>
+  <app-badge [explain]="true"></app-badge>
+  <p>Sample can be found <a [href]="sampleUrl" target="_blank">here</a>.</p>
+  <div>
+    <app-file-drop></app-file-drop>
+    <p-button (click)="loadSample()">Load sample file</p-button>
   </div>
 </div>
-<hr />
-<app-data-preview></app-data-preview>

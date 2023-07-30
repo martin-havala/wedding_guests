@@ -1,26 +1,21 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { first } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
 @UntilDestroy()
 @Component({
-  selector: 'app-editor',
-  templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.sass'],
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.sass'],
 })
-export class EditorComponent implements OnInit {
+export class SettingsComponent {
   sizeMm: number = 25;
   fontSizeMm: number = 8;
   marginMm: number = 3;
   paddingMm: number = 1;
-  sampleUrl = `${
-    inject(APP_BASE_HREF).replace(/\/$/, '') || '.'
-  }/assets/wedding_list.csv`;
 
-  constructor(private ds: DataService, private http: HttpClient) {}
+  constructor(private ds: DataService) {}
 
   ngOnInit(): void {
     this.ds.printSettings
@@ -42,14 +37,5 @@ export class EditorComponent implements OnInit {
       [key]: val,
     };
     this.ds.printSettings.next(nextVal);
-  }
-
-  loadSample() {
-    this.http
-      .get(this.sampleUrl, {
-        observe: 'response',
-        responseType: 'text',
-      })
-      .subscribe((weds) => this.ds.parseTxt(weds.body ?? ''));
   }
 }

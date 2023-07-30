@@ -26,7 +26,7 @@ export class BadgeComponent implements OnInit {
   row1: string = 'name';
   row2: string = 'surname';
   row3: string = 'note';
-  lHeartSize: number = 0.6;
+  lHeartSize: number = 0.75;
   rHeartSize: number = 1;
   sizeMm: number = 25;
   marginMm: number = 5;
@@ -60,7 +60,9 @@ export class BadgeComponent implements OnInit {
         this.width = this.outherWidth + this.padding * 2;
         this.width_2 = this.width / 2;
         const w = Math.ceil(this.width);
-        this.viewBox = `0 0 ${w + (this.explain ? this.explainWidth : 0)} ${w}`;
+        this.viewBox = `0 0 ${
+          w + (this.explain ? this.explainWidth * 2 : 0)
+        } ${w}`;
         this.sizeRatio = this.innerWidth / 120;
         this.cdr.markForCheck();
       });
@@ -72,16 +74,16 @@ export class BadgeComponent implements OnInit {
     this.row2 = this.person['surname'] ?? '';
     this.row3 = this.person['note'] ?? '';
     this.lHeartSize =
-      0.6 +
-      0.4 *
+      0.75 +
+      0.25 *
         Math.pow(
           (this.person['known_years1'] ?? 1) /
             (this.ds.yearRange - this.ds.yearExtent[0]),
           2
         );
     this.rHeartSize =
-      0.6 +
-      0.4 *
+      0.75 +
+      0.25 *
         Math.pow(
           (this.person['known_years2'] ?? 1) /
             (this.ds.yearRange - this.ds.yearExtent[0]),

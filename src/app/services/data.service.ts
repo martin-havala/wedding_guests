@@ -13,7 +13,7 @@ export class DataService {
     marginMm: number;
     fontSizeMm: number;
     paddingMm: number;
-  }>({ sizeMm: 25, marginMm: 5, fontSizeMm: 8, paddingMm: 1 });
+  }>({ sizeMm: 25, marginMm: 5, fontSizeMm: 8, paddingMm: .5 });
   catColors = new BehaviorSubject<{ [key: string]: string }>({});
   fontFamily = new BehaviorSubject<string>(' ');
 
