@@ -1,0 +1,22 @@
+<div>
+  <app-badge
+    [ngStyle]="{
+      width: width + 'mm',
+      height: width + 'mm'
+    }"
+    *ngFor="let person of ds.data | async"
+    [person]="person"
+  />
+</div>
+
+<div>
+  <app-badge
+    [ngStyle]="{
+      width: width + 'mm',
+      height: width + 'mm'
+    }"
+    *ngFor="let person of ds.data | async"
+    [person]="person"
+    [outline]="true"
+  />
+</div>

@@ -1,0 +1,9 @@
+<p-fileUpload
+  mode="basic"
+  name="wedding_guests"
+  chooseLabel="Attach your quest list"
+  accept="text/csv"
+  [maxFileSize]="1000000"
+  (onSelect)="parseFile($event)"
+  [auto]="true"
+></p-fileUpload>

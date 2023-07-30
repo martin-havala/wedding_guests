@@ -1,0 +1,11 @@
+How have you met?
+<ul>
+  <li *ngFor="let item of catColors | keyvalue; index as i; trackBy: trackCat">
+    <p-colorPicker
+      [ngModel]="item.value"
+      (onChange)="updateCats(item.key, $event)"
+    >
+    </p-colorPicker>
+    {{ item.key }}
+  </li>
+</ul>
