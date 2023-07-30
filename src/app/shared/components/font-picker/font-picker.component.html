@@ -2,7 +2,7 @@
   <span class="p-inputgroup-addon">Font Family</span>
   <p-dropdown
     [options]="fonts"
-    [ngModel]="activeFont"
+    [(ngModel)]="activeFont"
     (ngModelChange)="onFontChange($event)"
     [editable]="true"
   />

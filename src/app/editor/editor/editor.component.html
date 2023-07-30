@@ -12,7 +12,7 @@
       <div class="p-inputgroup">
         <span class="p-inputgroup-addon">Badge size (mm)</span>
         <p-inputNumber
-          [ngModel]="sizeMm"
+          [(ngModel)]="sizeMm"
           (ngModelChange)="makeChange('sizeMm', $event)"
           mode="decimal"
           [minFractionDigits]="1"
@@ -24,7 +24,7 @@
       <div class="p-inputgroup">
         <span class="p-inputgroup-addon">Badge bleed (mm)</span>
         <p-inputNumber
-          [ngModel]="marginMm"
+          [(ngModel)]="marginMm"
           (ngModelChange)="makeChange('marginMm', $event)"
           mode="decimal"
           [minFractionDigits]="1"
@@ -35,7 +35,7 @@
       <div class="p-inputgroup">
         <span class="p-inputgroup-addon">Spacing Size (mm)</span>
         <p-inputNumber
-          [ngModel]="paddingMm"
+          [(ngModel)]="paddingMm"
           (ngModelChange)="makeChange('paddingMm', $event)"
           mode="decimal"
           [minFractionDigits]="1"
@@ -47,7 +47,7 @@
         <span class="p-inputgroup-addon">Font Size (mm)</span>
         <p-inputNumber
           placeholder="fontSizeMm"
-          [ngModel]="fontSizeMm"
+          [(ngModel)]="fontSizeMm"
           (ngModelChange)="makeChange('fontSizeMm', $event)"
           mode="decimal"
           [minFractionDigits]="1"

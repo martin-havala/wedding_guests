@@ -28,7 +28,7 @@ export class BadgeComponent implements OnInit {
   row3: string = 'note';
   lHeartSize: number = 0.6;
   rHeartSize: number = 1;
-  sizeMm: number = 25.4;
+  sizeMm: number = 25;
   marginMm: number = 5;
   paddingMm: number = 1;
   fontSizeMm: number = 8;

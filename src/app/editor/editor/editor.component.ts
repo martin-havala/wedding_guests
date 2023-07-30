@@ -20,7 +20,7 @@ export class EditorComponent implements OnInit {
   ngOnInit(): void {
     this.ds.printSettings
       .pipe(untilDestroyed(this), first())
-      .subscribe(({ sizeMm, marginMm, paddingMm , fontSizeMm}) => {
+      .subscribe(({ sizeMm, marginMm, paddingMm, fontSizeMm }) => {
         this.sizeMm = sizeMm;
         this.marginMm = marginMm;
         this.paddingMm = paddingMm;
@@ -29,12 +29,13 @@ export class EditorComponent implements OnInit {
   }
 
   makeChange(key: string, val: number) {
-    this.ds.printSettings.next({
+    const nextVal = {
       sizeMm: this.sizeMm,
       marginMm: this.marginMm,
       fontSizeMm: this.fontSizeMm,
       paddingMm: this.paddingMm,
       [key]: val,
-    });
+    };
+    this.ds.printSettings.next(nextVal);
   }
 }
