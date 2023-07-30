@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1690719679366,
+  "timestamp": 1690720212433,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -30,6 +30,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "/assets/.nojekyll",
         "/assets/fonts.json",
         "/assets/icons/icon-128x128.png",
         "/assets/icons/icon-144x144.png",
@@ -48,6 +49,7 @@
   "dataGroups": [],
   "hashTable": {
     "/556.a2a16acca1f69526.js": "1df4b882225ccc15223680f98d30fdcd08682bd9",
+    "/assets/.nojekyll": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
     "/assets/fonts.json": "a76592ce1f227066fc8bd0f34c65f9a1b2f20768",
     "/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
     "/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
