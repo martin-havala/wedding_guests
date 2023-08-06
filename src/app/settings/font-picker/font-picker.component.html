@@ -1,0 +1,19 @@
+<nz-form-item>
+  <nz-form-label [nzSpan]="10" nzFor="fontFamily">Font family</nz-form-label>
+  <nz-form-control [nzSpan]="14">
+    <input
+      placeholder="input here"
+      nz-input
+      [(ngModel)]="activeFont"
+      (input)="onSearch($event)"
+      (ngModelChange)="onFontChange($event)"
+      [nzAutocomplete]="auto"
+    />
+    <nz-autocomplete
+      [nzDataSource]="suggestions"
+      nzBackfill
+      (selectionChange)="onFontChange($event.nzValue)"
+      #auto
+    ></nz-autocomplete>
+  </nz-form-control>
+</nz-form-item>

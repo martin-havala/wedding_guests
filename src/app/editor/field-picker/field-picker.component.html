@@ -1,0 +1,16 @@
+<nz-select
+  nzShowSearch
+  nzAllowClear
+  [nzPlaceHolder]="selectedValue"
+  [(ngModel)]="selectedValue"
+  (ngModelChange)="onChange($event)"
+  nzSize="small"
+  [disabled]="disabled"
+  nzDropdownClassName="widenDropdown"
+>
+  <nz-option
+    *ngFor="let cat of categories$ | async"
+    [nzLabel]="cat"
+    [nzValue]="cat"
+  ></nz-option>
+</nz-select>

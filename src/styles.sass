@@ -1,7 +1,3 @@
-
-@import "primeng/resources/primeng.css"
-@import "./theme.css"
-
 body
     font-family: var(--font-family)
 
@@ -29,4 +25,32 @@ hr
     .no-print, hr
         display: none
 
+.ant-form-item
+    margin: 1ex
 
+.ant-form-item-control
+    align-items: flex-start
+
+.hoverDownload
+    position: relative
+    display: block
+    &:after
+        opacity: 0
+        position: absolute
+        display: flex
+        content: "download"
+        align-items: center
+        justify-content: center
+        left: 5%
+        right: 5%
+        top: 5%
+        bottom: 5%
+        background: rgba(255,255,255,.9)
+        border-radius: 50%
+        transition: opacity ease-in-out 200ms
+    &:hover:after
+        opacity: 0.9
+
+.widenDropdown
+    overflow: auto
+    width: auto

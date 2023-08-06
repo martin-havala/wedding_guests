@@ -1,0 +1,7 @@
+<div>
+  <app-badge
+    downloadSvg
+    *ngFor="let person of ds.state$ | fromEachCat | async"
+    [person]="person"
+  />
+</div>

@@ -1,159 +1,99 @@
 <svg:svg
-  *ngIf="explain; else default"
+  *ngIf="standalone; else innerContent"
   xmlns="http://www.w3.org/2000/svg"
   [attr.viewBox]="viewBox"
+  [attr.width]="width10 / 10 + 'mm'"
+  [attr.height]="width10 / 10 + 'mm'"
 >
-  <g [attr.transform]="'translate(' + explainWidth + ',0)'">
-    <ng-container *ngTemplateOutlet="innerContent"></ng-container>
-  </g>
-  <text x="20" [attr.y]="margin + innerWidth * 0.68">known_from1</text>
-  <line
-    [attr.x1]="0"
-    [attr.x2]="explainWidth + margin + innerWidth * 0.35"
-    [attr.y1]="margin + innerWidth * 0.7"
-    [attr.y2]="margin + innerWidth * 0.7"
-    stroke="black"
-  />
-
-  <text x="20" [attr.y]="margin + innerWidth * 0.84">known_years1 ⇕</text>
-  <line
-    [attr.x1]="0"
-    [attr.x2]="explainWidth + margin + innerWidth * 0.4"
-    [attr.y1]="margin + innerWidth * 0.86"
-    [attr.y2]="margin + innerWidth * 0.86"
-    stroke="black"
-  />
-
-  <text
-    [attr.x]="explainWidth * 2 + width - 20"
-    [attr.y]="margin + innerWidth * 0.68"
-    text-anchor="end"
-  >
-    known_from2
-  </text>
-
-  <line
-    [attr.x1]="width + explainWidth * 2"
-    [attr.x2]="width_2 + explainWidth + innerWidth * 0.15"
-    [attr.y1]="margin + innerWidth * 0.7"
-    [attr.y2]="margin + innerWidth * 0.7"
-    stroke="black"
-  />
-
-  <text
-    [attr.x]="explainWidth * 2 + width - 20"
-    [attr.y]="margin + innerWidth * 0.84"
-    text-anchor="end"
-  >
-    ⇕ known_years2
-  </text>
-  <line
-    [attr.x1]="width + explainWidth * 2"
-    [attr.x2]="width_2 + explainWidth + innerWidth * 0.1"
-    [attr.y1]="margin + innerWidth * 0.86"
-    [attr.y2]="margin + innerWidth * 0.86"
-    stroke="black"
-  />
+  <ng-container *ngTemplateOutlet="innerContent"></ng-container>
 </svg:svg>
 
-<ng-template #default>
-  <svg:svg
-    *ngIf="standalone; else innerContent"
-    xmlns="http://www.w3.org/2000/svg"
-    [attr.viewBox]="viewBox"
-  >
-    <ng-container *ngIf="outline; else innerContent">
-      <ng-container *ngTemplateOutlet="outlineContent"></ng-container>
-    </ng-container>
-  </svg:svg>
-</ng-template>
-
-<ng-template #outlineContent>
+<ng-template #innerContent>
   <svg:circle
-    [attr.cx]="width_2"
-    [attr.cy]="width_2"
-    [attr.r]="outherWidth / 2"
+    [attr.cx]="width10_2"
+    [attr.cy]="width10_2"
+    [attr.r]="outherWidthMm10 / 2"
     stroke="gray"
     fill="none"
   />
-</ng-template>
-<ng-template #innerContent>
-  <svg:g [ngStyle]="{ 'font-family': ds.fontFamily | async }">
-    <circle
-      class="no-print"
-      [attr.cx]="width_2"
-      [attr.cy]="width_2"
-      [attr.r]="innerWidth / 2"
-      stroke="red"
-      opacity="0.4"
-      fill="none"
-    />
 
-    <path
+  <svg:circle
+    *ngIf="!print"
+    [attr.cx]="width10_2"
+    [attr.cy]="width10_2"
+    [attr.r]="innerWidthMm10 / 2"
+    stroke="red"
+    opacity="0.4"
+    fill="none"
+  />
+
+  <ng-container *ngIf="person">
+    <svg:path
       class="lHeart"
       [attr.transform]="
         'translate(' +
-        width_2 +
+        width10_2 +
         ', ' +
-        (innerWidth + margin + padding) +
+        (innerWidthMm10 + margin10 + padding10) +
         ') scale(' +
         lHeartSize * sizeRatio +
         ')'
       "
-      [attr.fill]="
-        person
-          ? ((ds.catColors | async) ?? {})[person['known_from1']]
-          : '#fe3232'
-      "
+      [attr.fill]="person | catColor : 'known_from1'"
       d="m -18.492188,-73.34375 c -8.829605,-0.710875 -18.633624,9.092724 -19.648437,17.892578 C -40.71071,-33.164924 -6.1101682,-10.572348 0,0 0,0 11.006745,-19.020545 10.971641,-36.265355 10.936121,-53.714537 -2.7565958,-72.076872 -18.492188,-73.34375 Z"
     />
 
-    <path
+    <svg:path
       href="#shape"
       class="rHeart"
       [attr.transform]="
         'translate(' +
-        width_2 +
+        width10_2 +
         ', ' +
-        (innerWidth + margin + padding) +
+        (innerWidthMm10 + margin10 + padding10) +
         ')scale(' +
         -rHeartSize * sizeRatio +
         ' ' +
         rHeartSize * sizeRatio +
         ')'
       "
-      [attr.fill]="
-        person
-          ? ((ds.catColors | async) ?? {})[person['known_from2']]
-          : '#3232fe'
-      "
+      [attr.fill]="person | catColor : 'known_from2'"
       d="m -18.492188,-73.34375 c -8.829605,-0.710875 -18.633624,9.092724 -19.648437,17.892578 C -40.71071,-33.164924 -6.1101682,-10.572348 0,0 0,0 11.006745,-19.020545 10.971641,-36.265355 10.936121,-53.714537 -2.7565958,-72.076872 -18.492188,-73.34375 Z"
     />
 
-    <text
-      [attr.font-size]="fontSizeMm + 'mm'"
-      [attr.y]="padding + margin + innerWidth * 0.22"
-      [attr.x]="width_2"
+    <svg:text
+      [ngStyle]="{ 'font-family': ds.fontFamily | async }"
+      [attr.font-size]="fontSizeMm10"
+      [attr.y]="padding10 + margin10 + innerWidthMm10 * 0.22"
+      [attr.x]="width10_2"
       text-anchor="middle"
     >
       {{ row1 }}
-    </text>
-    <text
-      [attr.font-size]="fontSizeMm + 'mm'"
-      [attr.y]="padding + margin + innerWidth * 0.22 + fontSizeMm * 5"
-      [attr.x]="width_2"
+    </svg:text>
+
+    <svg:text
+      [attr.font-size]="fontSizeMm10"
+      [ngStyle]="{ 'font-family': ds.fontFamily | async }"
+      [attr.y]="
+        padding10 + margin10 + innerWidthMm10 * 0.22 + fontSizeMm10 * 1.2
+      "
+      [attr.x]="width10_2"
       text-anchor="middle"
     >
       {{ row2 }}
-    </text>
-    <text
-      [attr.font-size]="fontSizeMm * 0.8 + 'mm'"
-      [attr.y]="padding + margin + innerWidth * 0.22 + fontSizeMm * 10"
-      [attr.x]="width_2"
+    </svg:text>
+
+    <svg:text
+      [attr.font-size]="fontSizeMm10 * 0.8"
+      [ngStyle]="{ 'font-family': ds.fontFamily | async }"
+      [attr.y]="
+        padding10 + margin10 + innerWidthMm10 * 0.22 + fontSizeMm10 * 2.2
+      "
+      [attr.x]="width10_2"
       text-anchor="middle"
       opacity=".7"
     >
       {{ row3 }}
-    </text>
-  </svg:g>
-</ng-template>
+    </svg:text>
+  </ng-container></ng-template
+>

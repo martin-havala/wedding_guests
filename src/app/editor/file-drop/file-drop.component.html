@@ -1,0 +1,12 @@
+<nz-upload
+  [nzAccept]="'text/csv'"
+  [nzShowUploadList]="false"
+  [nzLimit]="1"
+  (nzChange)="parseFile($event)"
+  [nzCustomRequest]="stop"
+>
+  <button nz-button>
+    <span nz-icon nzType="upload"></span>
+    Attach your quest list
+  </button>
+</nz-upload>

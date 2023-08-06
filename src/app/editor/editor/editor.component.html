@@ -10,10 +10,10 @@
     >, here is small app to enhance your wedding day - data vis badge generator.
   </p>
   <p>Please provide a csv file with collumns according to a picture.</p>
-  <app-badge [explain]="true"></app-badge>
+  <app-fields-mapper />
+
   <p>Sample can be found <a [href]="sampleUrl" target="_blank">here</a>.</p>
   <div>
-    <app-file-drop></app-file-drop>
-    <p-button (click)="loadSample()">Load sample file</p-button>
+    <button nz-button (click)="loadSample()">Load sample file</button>
   </div>
 </div>

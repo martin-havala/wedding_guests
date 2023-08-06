@@ -1,6 +1,11 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { first } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
@@ -10,6 +15,7 @@ import { DataService } from 'src/app/services/data.service';
   selector: 'app-editor',
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditorComponent implements OnInit {
   sizeMm: number = 25;
@@ -39,6 +45,9 @@ export class EditorComponent implements OnInit {
       marginMm: this.marginMm,
       fontSizeMm: this.fontSizeMm,
       paddingMm: this.paddingMm,
+      // TODO
+      paperWmm: 210,
+      paperHMm: 297,
       [key]: val,
     };
     this.ds.printSettings.next(nextVal);

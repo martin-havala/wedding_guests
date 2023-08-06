@@ -1,54 +1,98 @@
 <div class="no-print">
   <h1>Print Settings</h1>
   <div class="inputs">
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon">Badge size (mm)</span>
-      <p-inputNumber
-        [(ngModel)]="sizeMm"
-        (ngModelChange)="makeChange('sizeMm', $event)"
-        mode="decimal"
-        [minFractionDigits]="1"
-        [min]="2.5"
-        [max]="210"
-      />
-    </div>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="10" nzFor="sizeMm">
+        Badge size (mm)
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-input-number
+          [(ngModel)]="sizeMm"
+          (ngModelChange)="makeChange('sizeMm', $event)"
+          [nzMin]="25"
+          [nzStep]="1"
+        >
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
 
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon">Badge bleed (mm)</span>
-      <p-inputNumber
-        [(ngModel)]="marginMm"
-        (ngModelChange)="makeChange('marginMm', $event)"
-        mode="decimal"
-        [minFractionDigits]="1"
-        [min]="0"
-      />
-    </div>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="10" nzFor="marginMm">
+        Badge bleed (mm)
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-input-number
+          [(ngModel)]="marginMm"
+          (ngModelChange)="makeChange('marginMm', $event)"
+          [nzMin]="0"
+          [nzStep]="0.5"
+          required
+        >
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="10" nzFor="paddingMm">
+        Spacing size (mm)
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-input-number
+          [(ngModel)]="paddingMm"
+          (ngModelChange)="makeChange('paddingMm', $event)"
+          [nzMin]="0"
+          [nzStep]="0.5"
+        >
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
 
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon">Spacing Size (mm)</span>
-      <p-inputNumber
-        [(ngModel)]="paddingMm"
-        (ngModelChange)="makeChange('paddingMm', $event)"
-        mode="decimal"
-        [minFractionDigits]="1"
-        [min]="0"
-      />
-    </div>
-
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon">Font Size (mm)</span>
-      <p-inputNumber
-        placeholder="fontSizeMm"
-        [(ngModel)]="fontSizeMm"
-        (ngModelChange)="makeChange('fontSizeMm', $event)"
-        mode="decimal"
-        [minFractionDigits]="1"
-        [min]="7"
-        [max]="100"
-      />
-    </div>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="10" nzFor="fontSizeMm">
+        Font size (mm)
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-input-number
+          [(ngModel)]="fontSizeMm"
+          (ngModelChange)="makeChange('fontSizeMm', $event)"
+          [nzMin]="3"
+          [nzStep]="0.2"
+          [nzMax]="50"
+        >
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
 
     <app-font-picker />
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="10" nzFor="paperWMm">
+        Paper width (mm)
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-input-number
+          [(ngModel)]="paperWMm"
+          (ngModelChange)="makeChange('paperWMm', $event)"
+          [nzMin]="3"
+          [nzStep]="1"
+        >
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="10" nzFor="paperHMm">
+        Paper height (mm)
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-input-number
+          [(ngModel)]="paperHMm"
+          (ngModelChange)="makeChange('paperHMm', $event)"
+          [nzMin]="3"
+          [nzStep]="1"
+        >
+        </nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
   </div>
   <app-categories />
 </div>

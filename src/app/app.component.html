@@ -1,5 +1,5 @@
 <app-header></app-header>
-<router-outlet slot="main"></router-outlet>
-
+<nz-spin *ngIf="loadingRouteConfig"></nz-spin>
+<router-outlet></router-outlet>
 <hr />
-<app-print />
+<app-preview />

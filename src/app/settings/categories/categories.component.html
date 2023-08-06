@@ -1,11 +1,14 @@
-Connection colors:
 <ul>
   <li *ngFor="let item of catColors | keyvalue; index as i; trackBy: trackCat">
-    <p-colorPicker
+    <input
+      type="color"
+      [name]="item.key"
+      [placeholder]="item.key"
       [ngModel]="item.value"
-      (onChange)="updateCats(item.key, $event)"
-    >
-    </p-colorPicker>
-    {{ item.key }}
+      (ngModelChange)="updateCats(item.key, $event)"
+    />
+    <label nzFor="sizeMm">
+      {{ item.key }}
+    </label>
   </li>
 </ul>

@@ -1,0 +1,13 @@
+<div class="mapper">
+  <img [src]="fieldsUrl" />
+  <app-field-picker
+    *ngFor="let key of catMap | keyvalue"
+    [disabled]="!catMap"
+    [ngClass]="key.key"
+    [attr.name]="key.key"
+    [(ngModel)]="key.value"
+    (ngModelChange)="updateValue(key.key, $event)"
+  ></app-field-picker>
+</div>
+
+<app-file-drop />
