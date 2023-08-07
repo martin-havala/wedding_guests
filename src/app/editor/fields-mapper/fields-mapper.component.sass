@@ -1,38 +1,51 @@
+:host
+    display: block
+    min-width: 500px
+
 .mapper
     position: relative
-    width: 100%
+    width: 300px
+    position: relative
+    width: clamp(200px,25vw,300px)
+    left: 50%
+    transform: translateX(-50%)
+    margin: 1em
+    img
+        width: 100%
+
 .name
     position: absolute
-    top: 40px
+    top: 40%
     left: 50%
-    transform: translateX(-50%)
+    transform: translate(-50%, -260%)
+
 .surname
     position: absolute
-    top: 65px
+    top: 40%
     left: 50%
-    transform: translateX(-50%)
+    transform: translate(-50%, -140%)
 .note
     position: absolute
-    top: 90px
+    top: 40%
     left: 50%
-    transform: translateX(-50%)
+    transform: translate(-50%, -20%)
 .known_from1
     position: absolute
-    top: 120px
+    top: 50%
     left: 0%
     transform: translateX(-100%)
 .known_from2
     position: absolute
-    top: 120px
+    top: 50%
     right: 0%
     transform: translateX(100%)
 .known_years1
     position: absolute
-    top: 190px
+    bottom: 10%
     left: 0%
     transform: translateX(-100%)
 .known_years2
     position: absolute
-    top: 190px
+    bottom: 10%
     right: 0%
     transform: translateX(100%)
