@@ -1,51 +1,52 @@
 :host
-    display: block
-    min-width: 500px
+    display: flex
+    justify-items: center
+    align-items: center
+    width: 100%
+    min-height: 200px
+    flex-direction: column
 
 .mapper
     position: relative
     width: 300px
-    position: relative
-    width: clamp(200px,25vw,300px)
-    left: 50%
-    transform: translateX(-50%)
+    width: clamp(150px,25vw,400px)
     margin: 1em 0
     img
         width: 100%
 
 .name
     position: absolute
-    top: 40%
+    top: 30%
     left: 50%
-    transform: translate(-50%, -260%)
+    transform: translate(-50%, -240%)
 
 .surname
     position: absolute
-    top: 40%
+    top: 30%
     left: 50%
-    transform: translate(-50%, -140%)
+    transform: translate(-50%, -120%)
 .note
     position: absolute
-    top: 40%
+    top: 30%
     left: 50%
-    transform: translate(-50%, -20%)
+    transform: translate(-50%, 0)
 .known_from1
     position: absolute
     top: 50%
-    left: 0%
-    transform: translateX(-100%)
+    left: 0
+    transform: translateX(-66%)
 .known_from2
     position: absolute
     top: 50%
-    right: 0%
-    transform: translateX(100%)
+    right: 0
+    transform: translateX(66%)
 .known_years1
     position: absolute
     bottom: 10%
-    left: 0%
-    transform: translateX(-100%)
+    left: 0
+    transform: translateX(-66%)
 .known_years2
     position: absolute
     bottom: 10%
-    right: 0%
-    transform: translateX(100%)
+    right: 0
+    transform: translateX(66%)

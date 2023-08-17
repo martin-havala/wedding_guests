@@ -23,6 +23,8 @@ export class PrintComponent implements OnInit, AfterViewInit {
   loaded = false;
   paperHMm10: number = 10;
   paperWMm10: number = 10;
+  marginHMm10: number = 0;
+  marginWMm10: number = 0;
   constructor(public ds: DataService, private cdr: ChangeDetectorRef) {}
 
   widthMm10 = 100;
@@ -40,6 +42,8 @@ export class PrintComponent implements OnInit, AfterViewInit {
           this.paperWMm10 = paperWmm * 10;
           const cols = Math.floor(this.paperWMm10 / this.widthMm10);
           const rows = Math.floor(this.paperHMm10 / this.widthMm10);
+          this.marginHMm10 = (this.paperHMm10 - rows * this.widthMm10) / 2;
+          this.marginWMm10 = (this.paperWMm10 - cols * this.widthMm10) / 2;
           this.pages = Math.ceil(data.length / (rows * cols));
           this.viewbox = `0 0 ${this.paperWMm10 * this.pages} ${
             this.paperHMm10

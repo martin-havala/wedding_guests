@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1691380727532,
+  "timestamp": 1692250599164,
   "index": "https://martin-havala.github.io/wedding_guests/index.html",
   "assetGroups": [
     {
@@ -11,9 +11,9 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://martin-havala.github.io/wedding_guests/14.a320a9c6ec396f02.js",
+        "https://martin-havala.github.io/wedding_guests/14.419f75d5d46d9bb5.js",
         "https://martin-havala.github.io/wedding_guests/300.ae5bf44beeff45ab.js",
-        "https://martin-havala.github.io/wedding_guests/553.35ea0f5ef95e1f60.js",
+        "https://martin-havala.github.io/wedding_guests/553.268a8d9959780650.js",
         "https://martin-havala.github.io/wedding_guests/753.a66ae69afa8a4244.js",
         "https://martin-havala.github.io/wedding_guests/common.e1e814dd4da8ad1b.js",
         "https://martin-havala.github.io/wedding_guests/favicon.ico",
@@ -21,7 +21,7 @@
         "https://martin-havala.github.io/wedding_guests/main.fc101ce6d30e0ac4.js",
         "https://martin-havala.github.io/wedding_guests/manifest.webmanifest",
         "https://martin-havala.github.io/wedding_guests/polyfills.fe403ce1c8cc1a2d.js",
-        "https://martin-havala.github.io/wedding_guests/runtime.d8ac0a84ebb4d66b.js",
+        "https://martin-havala.github.io/wedding_guests/runtime.6be12cdbf05d0eaa.js",
         "https://martin-havala.github.io/wedding_guests/styles.f34898ec020ff7e8.css"
       ],
       "patterns": []
@@ -52,9 +52,9 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://martin-havala.github.io/wedding_guests/14.a320a9c6ec396f02.js": "06b358d9e672318873cf452299de2f9a16ff64fc",
+    "https://martin-havala.github.io/wedding_guests/14.419f75d5d46d9bb5.js": "f1ed67c53616f3230267ff8b2a28a5f4df1ae436",
     "https://martin-havala.github.io/wedding_guests/300.ae5bf44beeff45ab.js": "ccc65d1bcf6b1ca149185406df3d9769e618b724",
-    "https://martin-havala.github.io/wedding_guests/553.35ea0f5ef95e1f60.js": "c446f5aa05c92f918a96d82b0d4aeb56a33f12ec",
+    "https://martin-havala.github.io/wedding_guests/553.268a8d9959780650.js": "90b4dde1835dabe5172758eae9186760dd584d02",
     "https://martin-havala.github.io/wedding_guests/753.a66ae69afa8a4244.js": "92bf9e4b9d2e4dfd8da17fefd1970938fc399e95",
     "https://martin-havala.github.io/wedding_guests/assets/.nojekyll": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
     "https://martin-havala.github.io/wedding_guests/assets/fields.svg": "41f461f1d8bb8e52044b2aa445bbc02dc20acbe1",
@@ -67,14 +67,14 @@
     "https://martin-havala.github.io/wedding_guests/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "https://martin-havala.github.io/wedding_guests/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
     "https://martin-havala.github.io/wedding_guests/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
-    "https://martin-havala.github.io/wedding_guests/assets/wedding_list.csv": "bb3594d7802c95366c5aa914deb52cccf979f830",
+    "https://martin-havala.github.io/wedding_guests/assets/wedding_list.csv": "fc2158b2f20d96e6a1db36cfc637b18373277e77",
     "https://martin-havala.github.io/wedding_guests/common.e1e814dd4da8ad1b.js": "0ccfef33ad34fe83e0b702c29d7785294066b083",
     "https://martin-havala.github.io/wedding_guests/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://martin-havala.github.io/wedding_guests/index.html": "8111935b6d108096a041257659917de6282424e0",
+    "https://martin-havala.github.io/wedding_guests/index.html": "5472bd343bd50e2cb1e4346519a0a6cad03e2da3",
     "https://martin-havala.github.io/wedding_guests/main.fc101ce6d30e0ac4.js": "b23058f6d9308fb1a13e25e7bd34e7541ebaf67c",
     "https://martin-havala.github.io/wedding_guests/manifest.webmanifest": "89990f7d77e42b3f993d7a180730da7bb73255e6",
     "https://martin-havala.github.io/wedding_guests/polyfills.fe403ce1c8cc1a2d.js": "2c51054d3a78dd1e67921cb272f33aa9a0cc94b2",
-    "https://martin-havala.github.io/wedding_guests/runtime.d8ac0a84ebb4d66b.js": "56089a09e3c7b762498855bf84c8e54eea80d5ec",
+    "https://martin-havala.github.io/wedding_guests/runtime.6be12cdbf05d0eaa.js": "a1d5d302e5c28697fc306dab21aedd451546355e",
     "https://martin-havala.github.io/wedding_guests/styles.f34898ec020ff7e8.css": "e619d2e2dc75df9b0c3101bd38727328418e553a"
   },
   "navigationUrls": [

@@ -52,7 +52,11 @@
         stroke="#555"
         fill="none"
       ></rect>
-      <g class="badges" name="badges">
+      <g
+        class="badges"
+        name="badges"
+        [attr.transform]="'translate(' + marginWMm10 + ' ' + marginHMm10 + ')'"
+      >
         <g
           *ngFor="let person of data; let i = index"
           [attr.transform]="
@@ -65,7 +69,26 @@
           app-badge
           [person]="person"
           [standalone]="false"
-          [print]="false"
+          [print]="true"
+        ></g>
+      </g>
+      <g
+        class="badges"
+        name="badges"
+        [attr.transform]="'translate(' + marginWMm10 + ' ' + marginHMm10 + ')'"
+      >
+        <g
+          *ngFor="let person of data; let i = index"
+          [attr.transform]="
+            'translate(' +
+            (person['page'] * paperWMm10 + person['col'] * widthMm10) +
+            ', ' +
+            person['row'] * widthMm10 +
+            ')'
+          "
+          app-badge
+          [standalone]="false"
+          [print]="true"
         ></g>
       </g>
     </svg:svg>
