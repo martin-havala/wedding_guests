@@ -1,5 +1,5 @@
 <app-header></app-header>
-<nz-spin *ngIf="loadingRouteConfig"></nz-spin>
+<app-overlay *ngIf="loadingRouteConfig" />
 <router-outlet></router-outlet>
 <hr />
 <app-preview />

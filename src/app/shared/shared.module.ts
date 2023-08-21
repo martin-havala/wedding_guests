@@ -11,14 +11,17 @@ import { PreviewComponent } from './components/preview/preview.component';
 import { DownloadSvgDirective } from './directives/download-svg.directive';
 import { CatColorPipe } from './pipes/cat-color.pipe';
 import { FromEachCatPipe } from './pipes/from-each-cat.pipe';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { OverlayComponent } from './components/overlay/overlay.component';
 
 const COMPONENTS = [
   BadgeComponent,
-  PreviewComponent,
-  HeaderComponent,
-  FromEachCatPipe,
   CatColorPipe,
   DownloadSvgDirective,
+  FromEachCatPipe,
+  HeaderComponent,
+  OverlayComponent,
+  PreviewComponent,
 ];
 @NgModule({
   declarations: COMPONENTS,
@@ -28,6 +31,7 @@ const COMPONENTS = [
     RouterModule,
     NzButtonModule,
     NzFormModule,
+    NzSpinModule,
     NzInputModule,
   ],
   exports: COMPONENTS,

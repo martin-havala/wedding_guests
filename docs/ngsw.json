@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1692250599164,
+  "timestamp": 1692617183489,
   "index": "https://martin-havala.github.io/wedding_guests/index.html",
   "assetGroups": [
     {
@@ -18,7 +18,7 @@
         "https://martin-havala.github.io/wedding_guests/common.e1e814dd4da8ad1b.js",
         "https://martin-havala.github.io/wedding_guests/favicon.ico",
         "https://martin-havala.github.io/wedding_guests/index.html",
-        "https://martin-havala.github.io/wedding_guests/main.fc101ce6d30e0ac4.js",
+        "https://martin-havala.github.io/wedding_guests/main.d1895bb35cf78bb2.js",
         "https://martin-havala.github.io/wedding_guests/manifest.webmanifest",
         "https://martin-havala.github.io/wedding_guests/polyfills.fe403ce1c8cc1a2d.js",
         "https://martin-havala.github.io/wedding_guests/runtime.6be12cdbf05d0eaa.js",
@@ -70,8 +70,8 @@
     "https://martin-havala.github.io/wedding_guests/assets/wedding_list.csv": "fc2158b2f20d96e6a1db36cfc637b18373277e77",
     "https://martin-havala.github.io/wedding_guests/common.e1e814dd4da8ad1b.js": "0ccfef33ad34fe83e0b702c29d7785294066b083",
     "https://martin-havala.github.io/wedding_guests/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://martin-havala.github.io/wedding_guests/index.html": "5472bd343bd50e2cb1e4346519a0a6cad03e2da3",
-    "https://martin-havala.github.io/wedding_guests/main.fc101ce6d30e0ac4.js": "b23058f6d9308fb1a13e25e7bd34e7541ebaf67c",
+    "https://martin-havala.github.io/wedding_guests/index.html": "e3900edc1e3052b56e5dae018df6991d8cd05a76",
+    "https://martin-havala.github.io/wedding_guests/main.d1895bb35cf78bb2.js": "3433961e2d44ca9b67b5f8002b6cc7b8c222ebe5",
     "https://martin-havala.github.io/wedding_guests/manifest.webmanifest": "89990f7d77e42b3f993d7a180730da7bb73255e6",
     "https://martin-havala.github.io/wedding_guests/polyfills.fe403ce1c8cc1a2d.js": "2c51054d3a78dd1e67921cb272f33aa9a0cc94b2",
     "https://martin-havala.github.io/wedding_guests/runtime.6be12cdbf05d0eaa.js": "a1d5d302e5c28697fc306dab21aedd451546355e",
