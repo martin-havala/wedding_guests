@@ -21,7 +21,7 @@ export class FieldsMapperComponent implements OnInit {
   constructor(private ds: DataService) {}
   ngOnInit(): void {
     this.ds.state$
-      .pipe(untilDestroyed(this), first())
+      .pipe(untilDestroyed(this))
       .subscribe(({ categoriesMap }) => {
         this.catMap = categoriesMap;
       });

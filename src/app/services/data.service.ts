@@ -4,6 +4,7 @@ import { autoType, dsvFormat } from 'd3-dsv';
 import { BehaviorSubject } from 'rxjs';
 import {
   CATEGORIES_MAP,
+  CategoriesMap,
   DEFAULT_STATE,
   DataState,
   PRINT_SETTINGS,
@@ -21,12 +22,23 @@ export class DataService {
 
   constructor() {
     const txtData = localStorage.getItem('textData');
+    const cats = localStorage.getItem('categories');
+    const colors = localStorage.getItem('catColors');
+
+    const categoriesMap = cats && JSON.parse(cats);
+    const catColors = colors && JSON.parse(colors);
+
     if (txtData) {
-      this.parseTxt(txtData);
+      this.parseTxt(txtData, false, categoriesMap, catColors);
     }
   }
 
-  parseTxt(txt: string, store = true) {
+  parseTxt(
+    txt: string,
+    store = true,
+    inCategoriesMap?: CategoriesMap,
+    inCatColors?: {}
+  ) {
     if (store) {
       localStorage.setItem('textData', txt);
     }
@@ -56,25 +68,34 @@ export class DataService {
       0,
       ...data
         .map((d: any) => [
-          d[CATEGORIES_MAP['known_years1']],
-          d[CATEGORIES_MAP['known_years2']],
+          d[(inCategoriesMap ?? CATEGORIES_MAP)['known_years1']],
+          d[(inCategoriesMap ?? CATEGORIES_MAP)['known_years2']],
         ])
         .flat()
         .filter(Boolean),
     ]) as [number, number];
 
-    const catColors = this.prepareCatColors(categories, schemeSet2);
+    const catColors =
+      inCatColors || this.prepareCatColors(categories, schemeSet2);
     const yearRange = yearExtent[1] - yearExtent[0];
     this.state.next({
       data,
       columns,
       catColors,
       categories,
-      categoriesMap: CATEGORIES_MAP,
+      categoriesMap: inCategoriesMap || CATEGORIES_MAP,
       dataTypes,
       yearExtent,
       yearRange,
     });
+
+    if (store) {
+      localStorage.setItem(
+        'categories',
+        JSON.stringify(inCategoriesMap || CATEGORIES_MAP)
+      );
+      localStorage.setItem('catColors', JSON.stringify(catColors));
+    }
     return data;
   }
 
@@ -142,5 +163,8 @@ export class DataService {
         categoriesMap: cMap,
       });
     }
+
+    localStorage.setItem('categories', JSON.stringify(cMap));
+    localStorage.setItem('catColors', JSON.stringify(catColors));
   }
 }
